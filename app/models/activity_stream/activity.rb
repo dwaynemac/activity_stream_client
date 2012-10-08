@@ -29,6 +29,10 @@ module ActivityStream
       false
     end
 
+    def json_root
+      'activity'
+    end
+
     attr_accessor :cached_object
     def object
       if cached_object.present?
