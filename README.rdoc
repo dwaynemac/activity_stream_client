@@ -8,7 +8,17 @@ In Gemfile
 
     gem 'activity_stream_client'
 
-In an initializer you should define:
+You'll need to override #local? method
+
+    module ActivityStream
+      class Activity < LogicalModel
+        def local?
+          generator == 'your-app-name'
+        end
+      end
+    end
+
+And you should define:
 
     ActivityStream::HYDRA
     ActivityStream::API_KEY
