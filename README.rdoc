@@ -21,6 +21,16 @@ In Gemfile
 
 # TODO ...
 
+== Updating gem
+
+=== Build gem locally:
+
+    gem build activity_stream_client.gemspec
+
+=== Push to rubygems
+
+    gem push activity_stream_client-X.Y.Z.gem
+
 == TODO
 
   * specs!
