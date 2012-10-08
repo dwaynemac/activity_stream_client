@@ -1,0 +1,13 @@
+= ActivityStream Client
+
+== Usage
+
+In Gemfile
+
+    gem 'activity_stream_client'
+
+In an initializer you should define:
+
+    ActivityStream::HYDRA
+    ActivityStream::API_KEY
+
