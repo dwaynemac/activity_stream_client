@@ -24,9 +24,13 @@ module ActivityStream
     self.api_key = API_KEY
     self.host  = HOST
 
-    # this method should be overridden in each app.
+    # Identifies activity as local to your app or not.
+    #
+    # To identify your app you should define constant: ActivityStream::LOCAL_APP_NAME
+    #
+    # @return [Boolean]
     def local?
-      false
+      defined?(LOCAL_APP_NAME) && (generator == LOCAL_APP_NAME)
     end
 
     def json_root

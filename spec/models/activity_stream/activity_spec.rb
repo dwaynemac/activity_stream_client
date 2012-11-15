@@ -11,5 +11,26 @@ module ActivityStream
         expect{Activity.paginate}.not_to raise_exception
       end
     end
+
+    describe "#local?" do
+      subject { Activity.new }
+      context "when local app name is defined" do
+        before do
+          LOCAL_APP_NAME = 'local-app-name'
+        end
+        context "when generator == app name" do
+          before { subject.generator = 'local-app-name' }
+          its(:generator){ should == 'local-app-name'}
+          it { should be_local }
+        end
+        context "when generator != app name" do
+          before { subject.generator = 'other-app-name' }
+          it { should_not be_local }
+        end
+      end
+      context "when local app name is not defined" do
+        it { should_not be_local }
+      end
+    end
   end
 end

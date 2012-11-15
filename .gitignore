@@ -1,2 +1,3 @@
 .idea
 activity_stream_client*.gem
+log/*

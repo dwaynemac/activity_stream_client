@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    activity_stream_client (0.0.4)
+    activity_stream_client (0.0.6)
       logical_model
       railties (~> 3.1)
 
