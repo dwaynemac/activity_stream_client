@@ -17,7 +17,6 @@ module ActivityStream
     ]
 
     self.hydra = HYDRA
-    self.use_ssl = (ENV['RACK_ENV']=="production")
     self.resource_path = "/v0/activities"
     self.use_api_key = true
     self.api_key_name = "app_key"

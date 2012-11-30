@@ -7,7 +7,7 @@ if(defined?(Rails))
 
     HOST = case Rails.env
       when "production"
-       "padma-activity-stream.herokupp.com"
+       "padma-activity-stream.herokuapp.com"
       when "staging"
        "padma-activity-stream-staging.herokuapp.com"
       when "development"
