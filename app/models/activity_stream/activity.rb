@@ -13,7 +13,8 @@ module ActivityStream
         :object_id,
         :object_type,
         :created_at,
-        :updated_at
+        :updated_at,
+        :public
     ]
 
     self.hydra = HYDRA
