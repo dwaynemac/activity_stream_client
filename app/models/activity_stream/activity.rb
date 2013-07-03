@@ -39,12 +39,11 @@ module ActivityStream
 
     attr_accessor :cached_object
     def object
-      if cached_object.present?
-        cached_object
-      elsif local?
+      if !cached_object.present? && local?
         klass = self.object_type.camelize.constantize
         self.cached_object = klass.find(object_id) if klass.exists?(object_id)
       end
+      cached_object
     end
 
     def local_deleted_object?
@@ -53,12 +52,11 @@ module ActivityStream
 
     attr_accessor :cached_target
     def target
-      if cached_target.present?
-        cached_target
-      elsif local?
+      if !cached_target.present? && local?
         klass = target_type.camelize.constantize
-        self.cached_target = klass.find(object_id) if klass.exists?(object_id)
+        self.cached_target = klass.find(target_id) if klass.exists?(target_id)
       end
+      cached_target
     end
 
   end
