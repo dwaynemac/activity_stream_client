@@ -8,6 +8,7 @@ module ActivityStream
         :content,
         :generator,
         :verb,
+        :data,
         :target_id,
         :target_type,
         :object_id,
